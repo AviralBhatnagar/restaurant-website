@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <meta name="author"
+     content="Aviral Bhatnagar">
+    <title>The Mulberry-Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../logo.jpg">
+    <script type="text/javascript">
+      function buyNow(x)
+      {
+        var qnty=document.getElementById(x).value;
+        if(qnty==0)
+        {
+          alert("Please enter item quantity.");
+        }
+        else{
+          var str=x.split("_");
+          var pizza=str.join(" ");
+          localStorage.setItem("pizza_name",pizza);
+          localStorage.setItem("pizza_quantity",qnty);
+          window.location.href="../checkout/checkoutForm.html";
+        }
+      }
+    </script>
+  <head>
+<body>
+  <header>
+    <img src="../logo.jpg" id="logo">
+    <nav id="top_links">
+      <a href="../index.html">Home</a>&nbsp&nbsp&nbsp
+      <a href="../index.html#menu">Menu</a>&nbsp&nbsp&nbsp
+      <a href="../index.html#Book_table">Book a Table</a>&nbsp&nbsp&nbsp
+      <a href="../index.html#info_a">Contact Us</a>&nbsp&nbsp&nbsp
+      <a href="../online_booking/booking.html">Online Order</a>&nbsp&nbsp&nbsp
+    </nav>
+  </header>
+  <div class="intro">
+    <p>SHOP</p>
+    <p id="lines">Chase the flavours</p>
+  </div>
+  <div class="dishes">
+  <div class="dish1">
+    <img src="../food/img0.jpg">
+    <p>The Neapolitan pizza<br><span id="price">250 Rs</span> × <input type="number" value="0" name="amt1" id="The_Neapolitan_pizza"><br>
+    <button onclick="buyNow('The_Neapolitan_pizza')">Buy Now</button></p>
+  </div>
+  <div class="dish2">
+    <img src="../food/img1.jpg">
+    <p>California style pizza <br><span id="price" >220 Rs</span> × <input type="number" value="0" name="amt2" id="California_style_pizza"><br>
+      <button onclick="buyNow('California_style_pizza')">Buy Now</button></p>
+  </div>
+  <div class="dish3">
+    <img src="../food/img2.jpg">
+    <p>Chicago Deep Dish<br><span id="price" >300 Rs</span> × <input type="number" value="0" name="amt3" id="Chicago_Deep_Dish"><br>
+      <button onclick="buyNow('Chicago_Deep_Dish')">Buy Now</button></p>
+  </div>
+  <div class="dish4">
+    <img src="../food/img3.jpg">
+    <p>New England Greek Style<br><span id="price" >270 Rs</span> × <input type="number" value="0" name="amt4" id="New_England_Greek_Style"><br>
+      <button onclick="buyNow('New_England_Greek_Style')">Buy Now</button></p>
+  </div>
+  <div class="dish5">
+    <img src="../food/img4.jpg">
+    <p>St. Louis Style<br><span id="price" >210 Rs</span> × <input type="number" value="0" name="amt5" id="St_Louis_Style"><br>
+    <button onclick="buyNow('St_Louis_Style')">Buy Now</button></p>
+  </div>
+  </div>
+  <footer>
+    <p>developed by Aviral Bhatnagar</p>
+  </footer>
+</body>
+</html>
