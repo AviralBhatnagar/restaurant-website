@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta name="author"
+     content="Aviral Bhatnagar">
+    <title>The Mulberry-Restaurant</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="../logo.jpg">
+    <script type="text/javascript">
+      function submitOrder(){
+        document.getElementById("pizza").value=localStorage.getItem("pizza_name");
+        document.getElementById("quantity").value=localStorage.getItem("pizza_quantity");
+        document.forms[0].submit();
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <img src="../logo.jpg" id="logo">
+      <nav id="top_links">
+        <a href="../index.html">Home</a>&nbsp&nbsp&nbsp
+        <a href="../index.html#menu">Menu</a>&nbsp&nbsp&nbsp
+        <a href="../index.html#Book_table">Book a Table</a>&nbsp&nbsp&nbsp
+        <a href="../index.html#info_a">Contact Us</a>&nbsp&nbsp&nbsp
+        <a href="../online_booking/booking.html">Online Order</a>&nbsp&nbsp&nbsp
+      </nav>
+    </header>
+    <div class="intro">
+      <p>Please Enter Your Detail</p>
+    </div>
+    <div class="forms">
+      <form action="online_book.php" method="post" name="formS">
+        <p>Billing Address</p>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Phone No" required>
+        <input type="text" name="address" placeholder="Your Address" required>
+        <input type="text" name="city" placeholder="City" required>
+        <input type="text" name="zip" placeholder="Pin Code" required>
+        <input type="hidden" name="pizza" id="pizza">
+        <<input type="hidden" name="quantity" id="quantity">
+        <hr>
+        <p>Payment Details</p>
+        <input type="text" name="namecard" placeholder="Name on Card" required>
+        <input type="text" name="cardno" placeholder="Card Number" required>
+        <input type="text" name="expmonth" placeholder="Expiry month" required>
+        <input type="text" name="expyear" placeholder="Expiry Year" required>
+        <input type="text" name="cvv" placeholder="CVV" required>
+        <button onclick="submitOrder()">Continue to checkout</button>
+      </form>
+    </div>
+    <footer>
+      <p>developed by Aviral Bhatnagar</p>
+    </footer>
+  </body>
+</html>
