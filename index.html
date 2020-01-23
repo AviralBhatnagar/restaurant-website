@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <meta name="author"
+     content="Aviral Bhatnagar">
+    <title>The Mulberry-Restaurant</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="logo.jpg">
+    <script type="text/javascript">
+    var i=0;
+    var img=["food/img0.jpg","food/img1.jpg","food/img2.jpg","food/img3.jpg","food/img4.jpg"];
+      function change(x)
+      {
+        if(x==1)
+        {
+          i++;
+          var temp=img[i];
+          document.getElementsByClassName('slide')[0].style.backgroundImage="url("+temp+")";
+          if(i==4){i=0;}
+        }
+        else
+        {
+          if(i==0){i=5;}
+          i--;
+          var temp=img[i];
+          document.getElementsByClassName('slide')[0].style.backgroundImage="url("+temp+")";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <img src="logo.jpg" id="logo">
+      <nav id="top_links">
+        <a href="#">Home</a>&nbsp&nbsp&nbsp
+        <a href="#menu">Menu</a>&nbsp&nbsp&nbsp
+        <a href="#Book_table">Book a Table</a>&nbsp&nbsp&nbsp
+        <a href="#info_a">Contact Us</a>&nbsp&nbsp&nbsp
+        <a href="online_booking/booking.html">Online Order</a>&nbsp&nbsp&nbsp
+      </nav>
+    </header>
+    <div class="first">
+      <p id="head1">CRISPLY SLICES</p><br>
+      <p id="head2">THE PASSION FOR THE PERFECT TASTE</p><br>
+      <button onclick="window.location.href='online_booking/booking.html'">ONLINE ORDER</button>
+    </div>
+
+  <div class="Book_table" id="Book_table">
+    <p id="a">Book a Table</p>
+    <span>Reservation</span>
+    <form action="booking_seat.php" method="post">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="text" name="date" placeholder="Choose A Date" onclick="(this.type='date')" required>
+      <input type="text" name="time" placeholder="Choose A Time" onclick="(this.type='time')" required>
+      <input type="number" name="person" placeholder="Persons" min="1" max="10" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone No" required>
+      <input type="submit" id="submit" value="Book Now">
+    </form>
+  </div>
+  <hr id="menu">
+  <p id="menu_start">MENU</p>
+  <h1>Our Delicacy</h1>
+  <div class="slide">
+    <div class="left_arrow" onclick="change(1)" ><
+    </div>
+    <div class="right_arrow" onclick="change(-1)">>
+    </div>
+  </div>
+  <div class="info">
+    <p id="info_a">Short Info</p>
+    <p>GET IN TOUCH</p>
+    <div class="left">
+      <span>Contact Us</span>
+      <ul id="contact" style="list-style:none;">
+        <li><span>+1122 345 678</span>
+        <li><span>help@mulberry.com</span>
+        <li><span>329 Mulberry Street,Scotland</span>
+      </ul>
+    </div>
+    <div class="right">
+      <span>Opening Hour</span>
+      <ul id="opening" style="list-style:none;">
+        <li><span id="day">Monday</span><span id="time">09 am - 10 pm</span></li>
+        <li><span id="day">Tuesday</span><span id="time">09 am - 10 pm</span></li>
+        <li><span id="day">Wednesday</span><span id="time">09 am - 10 pm</span></li>
+        <li><span id="day">Thursday</span><span id="time">09 am - 10 pm</span></li>
+        <li><span id="day">Friday</span><span id="time">09 am - 10 pm</span></li>
+        <li><span id="day">Saturday</span><span id="time">10 am - 11 pm</span></li>
+        <li><span id="day">Sunday</span><span id="time">Closed</span></li>
+      </ul>
+    </div>
+  </div>
+  <footer>
+    <p>developed by Aviral Bhatnagar</p>
+  </footer>
+</body>
+</html>
